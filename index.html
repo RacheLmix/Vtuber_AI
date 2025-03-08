@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Miku Miku VTuber</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>Miku Miku VTuber Made By Rachel</h1>
+        <div id="live2d-container">
+            <canvas id="live2d" width="800" height="600"></canvas>
+        </div>
+        <div class="controls">
+            <h2>Expressions</h2>
+            <div class="expression-buttons">
+                <button id="btn-clothes">Toggle Clothes Cover</button>
+                <button id="btn-down-teeth">Toggle Down Canine Teeth</button>
+                <button id="btn-up-teeth">Toggle Up Canine Teeth</button>
+                <button id="btn-dress">Toggle Dress</button>
+                <button id="btn-fan-hand">Toggle Fan Hand</button>
+                <button id="btn-fan-open">Toggle Fan Open</button>
+                <button id="btn-heart-eye">Toggle Heart Eyes</button>
+                <button id="btn-tear">Toggle Tears</button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Live2D Libraries - Using CubismWebFramework -->
+    <!-- Core Live2D Library -->
+    <script src="https://cubism.live2d.com/sdk-web/cubismcore/live2dcubismcore.min.js"></script>
+    
+    <!-- Live2D Cubism Web Framework -->
+    <script src="https://cdn.jsdelivr.net/gh/dylanNew/live2d/webgl/Live2D/lib/live2d.min.js"></script>
+    
+    <!-- PIXI.js for rendering -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/pixi.js/5.1.3/pixi.min.js"></script>
+    
+    <!-- PIXI-Live2D integration -->
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism2.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/pixi-live2d-display/dist/cubism4.min.js"></script>
+    
+    <!-- Our Application Code -->
+    <script src="app.js"></script>
+</body>
+</html> 

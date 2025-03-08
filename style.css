@@ -1,0 +1,259 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: #f8f9ff;
+    color: #333;
+    background-image: linear-gradient(135deg, #f0f8ff 0%, #e6f0ff 100%);
+    min-height: 100vh;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 30px 20px;
+    text-align: center;
+}
+
+h1 {
+    color: #4b4b9d;
+    margin-bottom: 25px;
+    font-size: 2.8rem;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.1);
+    font-weight: 700;
+}
+
+h1 i {
+    color: #ff69b4;
+    font-size: 2.2rem;
+    vertical-align: middle;
+    margin: 0 10px;
+}
+
+h2 {
+    color: #4b4b9d;
+    margin: 25px 0 15px;
+    font-size: 1.8rem;
+    position: relative;
+    display: inline-block;
+}
+
+h2 i {
+    margin-right: 10px;
+    color: #6a6acf;
+}
+
+h2:after {
+    content: '';
+    position: absolute;
+    width: 60%;
+    height: 3px;
+    background: linear-gradient(90deg, rgba(106, 106, 207, 0), rgba(106, 106, 207, 1), rgba(106, 106, 207, 0));
+    bottom: -8px;
+    left: 20%;
+}
+
+.subtitle {
+    color: #666;
+    margin-bottom: 20px;
+    font-size: 1.1rem;
+}
+
+#live2d-container {
+    width: 800px;
+    height: 600px;
+    margin: 0 auto;
+    background-color: rgba(255, 255, 255, 0.8);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+    position: relative;
+    border: 1px solid rgba(106, 106, 207, 0.2);
+    transition: all 0.3s ease;
+}
+
+#live2d-container:hover {
+    box-shadow: 0 15px 30px rgba(0, 0, 0, 0.15);
+    transform: translateY(-5px);
+}
+
+#live2d {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.loading-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(255, 255, 255, 0.9);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    z-index: 10;
+    transition: opacity 0.5s ease;
+}
+
+.loading-overlay.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.spinner {
+    width: 50px;
+    height: 50px;
+    border: 5px solid rgba(106, 106, 207, 0.3);
+    border-radius: 50%;
+    border-top-color: #6a6acf;
+    animation: spin 1s linear infinite;
+    margin-bottom: 15px;
+}
+
+@keyframes spin {
+    to {
+        transform: rotate(360deg);
+    }
+}
+
+.loading-overlay p {
+    font-size: 1.2rem;
+    color: #4b4b9d;
+    font-weight: 600;
+}
+
+.controls {
+    margin-top: 35px;
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+}
+
+.expression-buttons {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+    margin-top: 20px;
+}
+
+button {
+    background-color: #6a6acf;
+    color: white;
+    border: none;
+    padding: 12px 18px;
+    border-radius: 8px;
+    cursor: pointer;
+    transition: all 0.3s;
+    font-size: 1rem;
+    font-weight: 600;
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.1);
+    min-width: 200px;
+}
+
+button i {
+    margin-right: 8px;
+}
+
+button:hover {
+    background-color: #5454b8;
+    transform: translateY(-2px);
+    box-shadow: 0 5px 10px rgba(0, 0, 0, 0.15);
+}
+
+button:active {
+    transform: translateY(0);
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+button.active {
+    background-color: #ff69b4;
+    box-shadow: 0 3px 8px rgba(255, 105, 180, 0.3);
+}
+
+footer {
+    margin-top: 40px;
+    padding: 20px;
+    color: #666;
+    font-size: 0.95rem;
+    border-top: 1px solid rgba(106, 106, 207, 0.2);
+}
+
+.copyright {
+    margin-top: 10px;
+    font-size: 0.85rem;
+    color: #888;
+}
+
+@media (max-width: 850px) {
+    h1 {
+        font-size: 2.2rem;
+    }
+    
+    h1 i {
+        font-size: 1.8rem;
+    }
+    
+    #live2d-container {
+        width: 100%;
+        height: 450px;
+    }
+    
+    .expression-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    button {
+        width: 80%;
+        max-width: 300px;
+    }
+}
+
+@media (max-width: 500px) {
+    h1 {
+        font-size: 1.8rem;
+    }
+    
+    h1 i {
+        font-size: 1.5rem;
+        margin: 0 5px;
+    }
+    
+    h2 {
+        font-size: 1.5rem;
+    }
+    
+    .subtitle {
+        font-size: 0.95rem;
+    }
+    
+    #live2d-container {
+        height: 350px;
+    }
+    
+    .controls {
+        padding: 15px;
+    }
+    
+    button {
+        padding: 10px 15px;
+        font-size: 0.9rem;
+    }
+    
+    footer {
+        margin-top: 30px;
+        padding: 15px;
+        font-size: 0.85rem;
+    }
+} 
