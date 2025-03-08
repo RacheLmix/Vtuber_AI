@@ -5,26 +5,64 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Miku Miku VTuber</title>
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 </head>
 <body>
     <div class="container">
-        <h1>Miku Miku VTuber Made By Rachel</h1>
+        <h1><i class="fas fa-star"></i> Miku Miku VTuber <i class="fas fa-star"></i></h1>
+        
         <div id="live2d-container">
             <canvas id="live2d" width="800" height="600"></canvas>
-        </div>
-        <div class="controls">
-            <h2>Expressions</h2>
-            <div class="expression-buttons">
-                <button id="btn-clothes">Toggle Clothes Cover</button>
-                <button id="btn-down-teeth">Toggle Down Canine Teeth</button>
-                <button id="btn-up-teeth">Toggle Up Canine Teeth</button>
-                <button id="btn-dress">Toggle Dress</button>
-                <button id="btn-fan-hand">Toggle Fan Hand</button>
-                <button id="btn-fan-open">Toggle Fan Open</button>
-                <button id="btn-heart-eye">Toggle Heart Eyes</button>
-                <button id="btn-tear">Toggle Tears</button>
+            <div class="loading-overlay">
+                <div class="spinner"></div>
+                <p>Loading model...</p>
             </div>
         </div>
+        
+        <div class="controls">
+            <h2><i class="fas fa-magic"></i> Expressions</h2>
+            <p class="subtitle">Click the buttons below to toggle different expressions</p>
+            
+            <div class="expression-buttons">
+                <button id="btn-clothes"><i class="fas fa-tshirt"></i> Toggle Clothes Cover</button>
+                <button id="btn-down-teeth"><i class="fas fa-tooth"></i> Toggle Down Canine Teeth</button>
+                <button id="btn-up-teeth"><i class="fas fa-tooth"></i> Toggle Up Canine Teeth</button>
+                <button id="btn-dress"><i class="fas fa-female"></i> Toggle Dress</button>
+                <button id="btn-fan-hand"><i class="fas fa-fan"></i> Toggle Fan Hand</button>
+                <button id="btn-fan-open"><i class="fas fa-wind"></i> Toggle Fan Open</button>
+                <button id="btn-heart-eye"><i class="fas fa-heart"></i> Toggle Heart Eyes</button>
+                <button id="btn-tear"><i class="fas fa-tint"></i> Toggle Tears</button>
+            </div>
+        </div>
+        
+        <div class="voice-section">
+            <h2><i class="fas fa-microphone"></i> Voice Controls</h2>
+            <p class="subtitle">Make Miku speak with different voices and sounds</p>
+            
+            <div class="voice-controls">
+                <h3>Voice Phrases</h3>
+                <div class="voice-buttons">
+                    <button id="voice-greeting" class="voice-btn"><i class="fas fa-hand-paper"></i> Greeting</button>
+                    <button id="voice-happy" class="voice-btn"><i class="fas fa-smile"></i> Happy</button>
+                    <button id="voice-sad" class="voice-btn"><i class="fas fa-sad-tear"></i> Sad</button>
+                    <button id="voice-surprised" class="voice-btn"><i class="fas fa-surprise"></i> Surprised</button>
+                    <button id="voice-random" class="voice-btn"><i class="fas fa-random"></i> Random Reaction</button>
+                </div>
+                
+                <h3>Sound Effects</h3>
+                <div class="sound-reactions">
+                    <button id="sound-laugh" class="sound-btn"><i class="fas fa-laugh"></i> Laugh</button>
+                    <button id="sound-greeting" class="sound-btn"><i class="fas fa-hand-paper"></i> Greeting</button>
+                    <button id="sound-surprise" class="sound-btn"><i class="fas fa-surprise"></i> Surprise</button>
+                    <button id="sound-sad" class="sound-btn"><i class="fas fa-sad-tear"></i> Sad</button>
+                </div>
+            </div>
+        </div>
+        
+        <footer>
+            <p>Drag the model to move it around. Use the buttons to change expressions and play sounds.</p>
+            <p class="copyright">&copy; 2024 Miku Miku VTuber</p>
+        </footer>
     </div>
 
     <!-- Live2D Libraries - Using CubismWebFramework -->

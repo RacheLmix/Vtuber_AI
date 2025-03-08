@@ -57,6 +57,15 @@ h2:after {
     left: 20%;
 }
 
+h3 {
+    color: #5454b8;
+    margin: 20px 0 15px;
+    font-size: 1.4rem;
+    border-bottom: 1px solid rgba(106, 106, 207, 0.2);
+    padding-bottom: 8px;
+    display: inline-block;
+}
+
 .subtitle {
     color: #666;
     margin-bottom: 20px;
@@ -89,6 +98,7 @@ h2:after {
     height: 100%;
 }
 
+/* Loading Overlay Styles */
 .loading-overlay {
     position: absolute;
     top: 0;
@@ -101,22 +111,22 @@ h2:after {
     justify-content: center;
     align-items: center;
     z-index: 10;
-    transition: opacity 0.5s ease;
+    transition: opacity 0.5s ease, visibility 0.5s ease;
 }
 
 .loading-overlay.hidden {
     opacity: 0;
-    pointer-events: none;
+    visibility: hidden;
 }
 
 .spinner {
-    width: 50px;
-    height: 50px;
+    width: 60px;
+    height: 60px;
     border: 5px solid rgba(106, 106, 207, 0.3);
     border-radius: 50%;
     border-top-color: #6a6acf;
     animation: spin 1s linear infinite;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
 }
 
 @keyframes spin {
@@ -131,7 +141,7 @@ h2:after {
     font-weight: 600;
 }
 
-.controls {
+.controls, .voice-section {
     margin-top: 35px;
     background-color: rgba(255, 255, 255, 0.9);
     padding: 25px;
@@ -139,7 +149,11 @@ h2:after {
     box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
 }
 
-.expression-buttons {
+.voice-section {
+    margin-top: 40px;
+}
+
+.expression-buttons, .voice-buttons, .sound-reactions {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
@@ -181,6 +195,28 @@ button.active {
     box-shadow: 0 3px 8px rgba(255, 105, 180, 0.3);
 }
 
+.voice-btn {
+    background-color: #ff69b4;
+}
+
+.voice-btn:hover {
+    background-color: #e05a9d;
+}
+
+.sound-btn {
+    background-color: #4b4b9d;
+}
+
+.sound-btn:hover {
+    background-color: #3e3e82;
+}
+
+.voice-controls {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
 footer {
     margin-top: 40px;
     padding: 20px;
@@ -209,7 +245,7 @@ footer {
         height: 450px;
     }
     
-    .expression-buttons {
+    .expression-buttons, .voice-buttons, .sound-reactions {
         flex-direction: column;
         align-items: center;
     }
@@ -234,6 +270,10 @@ footer {
         font-size: 1.5rem;
     }
     
+    h3 {
+        font-size: 1.2rem;
+    }
+    
     .subtitle {
         font-size: 0.95rem;
     }
@@ -242,7 +282,7 @@ footer {
         height: 350px;
     }
     
-    .controls {
+    .controls, .voice-section {
         padding: 15px;
     }
     
@@ -256,4 +296,116 @@ footer {
         padding: 15px;
         font-size: 0.85rem;
     }
-} 
+}
+
+.voice-title {
+    margin-left: 700px;
+    font-size: 1.5rem;
+    color: #4b4b9d;
+    margin-top: 40px;
+}
+
+.voice-controls {
+    background-color: rgba(255, 255, 255, 0.9);
+    padding: 25px;
+    border-radius: 15px;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+    margin-top: 20px;
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+}
+
+.text-to-speech {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+#tts-text {
+    width: 100%;
+    height: 80px;
+    padding: 12px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-family: 'Arial', sans-serif;
+    font-size: 1rem;
+    resize: none;
+    transition: border-color 0.3s;
+}
+
+#tts-text:focus {
+    outline: none;
+    border-color: #6a6acf;
+    box-shadow: 0 0 5px rgba(106, 106, 207, 0.3);
+}
+
+.voice-buttons {
+    display: flex;
+    gap: 15px;
+    justify-content: center;
+}
+
+.primary-btn {
+    background-color: #ff69b4;
+}
+
+.primary-btn:hover {
+    background-color: #e05a9d;
+}
+
+#voice-select {
+    padding: 12px 18px;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    background-color: white;
+    cursor: pointer;
+    min-width: 200px;
+}
+
+.sound-reactions {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 12px;
+}
+
+.sound-btn {
+    background-color: #4b4b9d;
+}
+
+.sound-btn:hover {
+    background-color: #3e3e82;
+}
+
+footer {
+    margin-top: 40px;
+    
+    #live2d-container {
+        height: 350px;
+    }
+    
+    .voice-controls {
+        padding: 15px;
+    }
+    
+    .voice-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    #voice-select {
+        width: 100%;
+    }
+    
+    .sound-reactions {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .sound-btn {
+        width: 80%;
+        max-width: 300px;
+    }
+}

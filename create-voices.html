@@ -1,0 +1,267 @@
+- 
+ <!DOCTYPE html>
+ <html lang="en">
+ <head>
+     <meta charset="UTF-8">
+     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+     <title>Tạo File Giọng Nói VTuber</title>
+     <style>
+         body {
+             font-family: Arial, sans-serif;
+             max-width: 800px;
+             margin: 0 auto;
+             padding: 20px;
+             background-color: #f8f9ff;
+         }
+         h1 {
+             color: #4b4b9d;
+             text-align: center;
+         }
+         .container {
+             margin-top: 20px;
+             border: 1px solid #ccc;
+             padding: 20px;
+             border-radius: 15px;
+             background-color: white;
+             box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+             margin-bottom: 20px;
+         }
+         button {
+             padding: 10px 15px;
+             margin: 5px;
+             cursor: pointer;
+             background-color: #6a6acf;
+             color: white;
+             border: none;
+             border-radius: 8px;
+             font-weight: bold;
+         }
+         button:hover {
+             background-color: #5454b8;
+         }
+         button:disabled {
+             background-color: #cccccc;
+             cursor: not-allowed;
+         }
+         audio {
+             width: 100%;
+             margin-top: 10px;
+         }
+         .instructions {
+             background-color: #f0f8ff;
+             padding: 15px;
+             border-radius: 8px;
+             margin-bottom: 20px;
+             border-left: 4px solid #4b4b9d;
+         }
+         .section-title {
+             color: #4b4b9d;
+             border-bottom: 2px solid #eee;
+             padding-bottom: 10px;
+             margin-top: 30px;
+         }
+     </style>
+ </head>
+ <body>
+     <h1>Tạo File Giọng Nói Cho VTuber</h1>
+     
+     <div class="instructions">
+         <h3>Hướng dẫn:</h3>
+         <ol>
+             <li>Nhấn vào nút "Tạo Giọng Nói" để tạo âm thanh mẫu</li>
+             <li>Nghe thử âm thanh bằng cách nhấn nút play</li>
+             <li>Nếu bạn thích âm thanh đó, nhấn "Tải Xuống" để lưu file</li>
+             <li>Đặt file âm thanh đã tải xuống vào thư mục "voices" trong dự án của bạn</li>
+         </ol>
+     </div>
+     
+     <h2 class="section-title">Lời Chào</h2>
+     
+     <div class="container">
+         <h3>Hello</h3>
+         <button id="generate-hello">Tạo Giọng Nói</button>
+         <button id="download-hello" disabled>Tải Xuống</button>
+         <audio id="hello-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Hi There</h3>
+         <button id="generate-hi_there">Tạo Giọng Nói</button>
+         <button id="download-hi_there" disabled>Tải Xuống</button>
+         <audio id="hi_there-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Nice To Meet You</h3>
+         <button id="generate-nice_to_meet_you">Tạo Giọng Nói</button>
+         <button id="download-nice_to_meet_you" disabled>Tải Xuống</button>
+         <audio id="nice_to_meet_you-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <h2 class="section-title">Phản Ứng</h2>
+     
+     <div class="container">
+         <h3>Wow</h3>
+         <button id="generate-wow">Tạo Giọng Nói</button>
+         <button id="download-wow" disabled>Tải Xuống</button>
+         <audio id="wow-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Amazing</h3>
+         <button id="generate-amazing">Tạo Giọng Nói</button>
+         <button id="download-amazing" disabled>Tải Xuống</button>
+         <audio id="amazing-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Oh No</h3>
+         <button id="generate-oh_no">Tạo Giọng Nói</button>
+         <button id="download-oh_no" disabled>Tải Xuống</button>
+         <audio id="oh_no-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Hehe</h3>
+         <button id="generate-hehe">Tạo Giọng Nói</button>
+         <button id="download-hehe" disabled>Tải Xuống</button>
+         <audio id="hehe-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <h2 class="section-title">Cảm Xúc</h2>
+     
+     <div class="container">
+         <h3>Happy</h3>
+         <button id="generate-happy">Tạo Giọng Nói</button>
+         <button id="download-happy" disabled>Tải Xuống</button>
+         <audio id="happy-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Sad</h3>
+         <button id="generate-sad">Tạo Giọng Nói</button>
+         <button id="download-sad" disabled>Tải Xuống</button>
+         <audio id="sad-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Angry</h3>
+         <button id="generate-angry">Tạo Giọng Nói</button>
+         <button id="download-angry" disabled>Tải Xuống</button>
+         <audio id="angry-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <div class="container">
+         <h3>Surprised</h3>
+         <button id="generate-surprised">Tạo Giọng Nói</button>
+         <button id="download-surprised" disabled>Tải Xuống</button>
+         <audio id="surprised-audio" controls style="display: none;"></audio>
+     </div>
+     
+     <script>
+         // Audio context
+         let audioContext;
+         
+         // Initialize audio context on user interaction
+         document.addEventListener('click', () => {
+             if (!audioContext) {
+                 audioContext = new (window.AudioContext || window.webkitAudioContext)();
+             }
+         }, { once: true });
+         
+         // Voice configurations
+         const voiceConfigs = {
+             // Greetings
+             hello: {
+                 duration: 1.2,
+                 baseFreq: 500,
+                 pattern: 'rising',
+                 vibrato: 10,
+                 vibratoSpeed: 6
+             },
+             hi_there: {
+                 duration: 1.5,
+                 baseFreq: 480,
+                 pattern: 'updown',
+                 vibrato: 8,
+                 vibratoSpeed: 5
+             },
+             nice_to_meet_you: {
+                 duration: 2.0,
+                 baseFreq: 460,
+                 pattern: 'complex',
+                 vibrato: 6,
+                 vibratoSpeed: 4
+             },
+             
+             // Reactions
+             wow: {
+                 duration: 1.0,
+                 baseFreq: 550,
+                 pattern: 'rising',
+                 vibrato: 15,
+                 vibratoSpeed: 8
+             },
+             amazing: {
+                 duration: 1.8,
+                 baseFreq: 520,
+                 pattern: 'complex',
+                 vibrato: 12,
+                 vibratoSpeed: 7
+             },
+             oh_no: {
+                 duration: 1.5,
+                 baseFreq: 480,
+                 pattern: 'falling',
+                 vibrato: 8,
+                 vibratoSpeed: 5
+             },
+             hehe: {
+                 duration: 1.2,
+                 baseFreq: 540,
+                 pattern: 'laugh',
+                 vibrato: 10,
+                 vibratoSpeed: 12
+             },
+             
+             // Emotions
+             happy: {
+                 duration: 1.0,
+                 baseFreq: 520,
+                 pattern: 'updown',
+                 vibrato: 10,
+                 vibratoSpeed: 8
+             },
+             sad: {
+                 duration: 1.5,
+                 baseFreq: 440,
+                 pattern: 'falling',
+                 vibrato: 5,
+                 vibratoSpeed: 3
+             },
+             angry: {
+                 duration: 1.2,
+                 baseFreq: 460,
+                 pattern: 'sharp',
+                 vibrato: 15,
+                 vibratoSpeed: 10
+             },
+             surprised: {
+                 duration: 0.8,
+                 baseFreq: 580,
+                 pattern: 'rising',
+                 vibrato: 20,
+                 vibratoSpeed: 8
+             }
+         };
+         
+         // Setup for each voice
+         Object.keys(voiceConfigs).forEach(name => {
+             setupVoice(name, voiceConfigs[name]);
+         });
+         
+         function setupVoice(name, config) {
+             const generateBtn = document.getElementById(`generate-${name}`);
+             const downloadBtn = document.getElementById(`download-${name}`);
+             const audio = document.getElementById(`${name}-audio`);
+         }
